@@ -1,0 +1,54 @@
+{
+  "name": "euler-projects",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@google-cloud/firestore": "^2.5.0",
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "typescript": "3.6.4"
+  },
+  "scripts": {
+    "serve": "react-scripts start",
+    "buildfront": "react-scripts build && rm -rf dist && mkdir dist && mv build dist/frontend",
+    "buildback": "tsc --build server/tsconfig.json server/",
+    "back": "ts-node --project server/tsconfig.json server/index.ts",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "node dist/server/index.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": "2500"
+  },
+  "devDependencies": {
+    "ts-node": "^8.4.1",
+    "@types/express": "^4.17.1",
+    "@types/jest": "24.0.19",
+    "@types/node": "12.11.2",
+    "@types/react": "16.9.9",
+    "@types/react-dom": "16.9.2"
+  },
+  "proxy": "https://euler-projects.appspot.com"
+}
